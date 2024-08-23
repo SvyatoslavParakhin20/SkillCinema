@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.skillcinema.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_numberFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/onboarding_fragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_profile_fragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_filmFragment"
+            app:destination="@id/filmFragment"
+            app:popUpToSaveState="true"/>
+        <action
+            android:id="@+id/action_navigation_home_to_fullFilmList"
+            app:destination="@id/fullFilmList"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popUpToSaveState="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.skillcinema.ui.search.SearchFragment"
+        android:label=""
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_searchFragment_to_filmFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/filmFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_searchSettings"
+            app:popUpToSaveState="true"
+            app:destination="@id/searchSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.skillcinema.ui.profile.ProfileFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_navigation_home"
+            app:restoreState="true"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_profileFragment_to_filmFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/filmFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_fullCollectionFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/fullCollectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding_fragment"
+        android:name="com.skillcinema.ui.onboarding.OnboardingFragment"
+        android:label="fragment_number"
+        tools:layout="@layout/fragment_onboarding_pager" />
+    <fragment
+        android:id="@+id/filmFragment"
+        android:name="com.skillcinema.ui.film.FilmFragment"
+        android:label="fragment_film"
+        tools:layout="@layout/fragment_film" >
+        <argument android:name="film"
+            app:argType="android.os.Bundle" />
+        <action
+            android:id="@+id/action_filmFragment_to_navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:restoreState="true"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_filmFragment_to_fullFilmList"
+            app:restoreState="true"
+            app:destination="@id/fullFilmList" />
+        <action
+            android:id="@+id/action_filmFragment_to_actorFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/actorFragment" />
+        <action
+            android:id="@+id/action_filmFragment_self"
+            app:destination="@id/filmFragment" />
+        <action
+            android:id="@+id/action_filmFragment_to_actorsFullFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/actorsFullFragment" />
+        <action
+            android:id="@+id/action_filmFragment_to_similarFullFragment"
+            app:popUpToSaveState="true"
+            app:restoreState="true"
+            app:destination="@id/similarFullFragment" />
+        <action
+            android:id="@+id/action_filmFragment_to_filmographyFragment"
+            app:restoreState="true"
+            app:destination="@id/filmographyFragment" />
+        <action
+            android:id="@+id/action_filmFragment_to_galleryFullFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/galleryFullFragment" />
+        <action
+            android:id="@+id/action_filmFragment_to_galleryFullScreenFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/galleryFullScreenFragment" />
+        <action
+            android:id="@+id/action_filmFragment_to_seasonsFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/seasonsFragment" />
+        <action
+            android:id="@+id/action_filmFragment_to_collectionDialogFragment"
+            app:destination="@id/collectionDialogFragment" />
+        <action
+            android:id="@+id/action_filmFragment_to_profileFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true"
+            app:restoreState="true"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullFilmList"
+        android:name="com.skillcinema.ui.fullFilmList.FullFilmList"
+        android:label="fragment_full_film_list"
+        tools:layout="@layout/fragment_full_film_list" >
+        <argument android:name="categoryOrFilter"
+            app:argType="android.os.Bundle" />
+        <action
+            android:id="@+id/action_fullFilmList_to_navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:restoreState="true"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_fullFilmList_to_filmFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/filmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actorFragment"
+        android:name="com.skillcinema.ui.actor.ActorFragment"
+        android:label="fragment_actor"
+        tools:layout="@layout/fragment_actor" >
+        <argument
+            android:name="staffId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_actorFragment_to_filmographyFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/filmographyFragment" />
+        <action
+            android:id="@+id/action_actorFragment_to_filmFragment"
+            app:restoreState="true"
+            app:destination="@id/filmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filmographyFragment"
+        android:name="com.skillcinema.ui.filmography.FilmographyFragment"
+        android:label="fragment_filmography"
+        tools:layout="@layout/fragment_filmography" >
+        <argument
+            android:name="staffId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_filmographyFragment_to_actorFragment"
+            app:popUpTo="@id/actorFragment"
+            app:restoreState="true"
+            app:destination="@id/actorFragment" />
+        <action
+            android:id="@+id/action_filmographyFragment_to_filmFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/filmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actorsFullFragment"
+        android:name="com.skillcinema.ui.actorsFull.ActorsFullFragment"
+        android:label="fragment_actors_full"
+        tools:layout="@layout/fragment_actors_full" >
+        <action
+            android:id="@+id/action_actorsFullFragment_to_actorFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/actorFragment" />
+        <action
+            android:id="@+id/action_actorsFullFragment_to_filmFragment"
+            app:restoreState="true"
+            app:destination="@id/filmFragment" />
+        <argument
+            android:name="bundle"
+            app:argType="android.os.Bundle" />
+    </fragment>
+    <fragment
+        android:id="@+id/similarFullFragment"
+        android:name="com.skillcinema.ui.similarFull.SimilarFullFragment"
+        android:label="fragment_similar_full"
+        tools:layout="@layout/fragment_similar_full" >
+        <action
+            android:id="@+id/action_similarFullFragment_to_filmFragment"
+            app:restoreState="true"
+            app:popUpToSaveState="true"
+            app:destination="@id/filmFragment" />
+        <argument
+            android:name="kinopoiskId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/galleryFullFragment"
+        android:name="com.skillcinema.ui.galleryFull.GalleryFullFragment"
+        android:label="fragment_gallery_full"
+        tools:layout="@layout/fragment_gallery_full" >
+        <action
+            android:id="@+id/action_galleryFullFragment_to_filmFragment"
+            app:restoreState="true"
+            app:popUpTo="@id/filmFragment"
+            app:destination="@id/filmFragment" />
+        <action
+            android:id="@+id/action_galleryFullFragment_to_galleryFullScreenFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/galleryFullScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/galleryFullScreenFragment"
+        android:name="com.skillcinema.ui.galleryFullScreen.GalleryFullScreenFragment"
+        android:label="fragment_gallery_full_screen"
+        tools:layout="@layout/fragment_gallery_full_screen" >
+        <argument
+            android:name="imageUrl"
+            app:argType="android.os.Bundle" />
+        <action
+            android:id="@+id/action_galleryFullScreenFragment_to_galleryFullFragment"
+            app:popUpTo="@id/galleryFullFragment"
+            app:restoreState="true"
+            app:destination="@id/galleryFullFragment" />
+        <action
+            android:id="@+id/action_galleryFullScreenFragment_to_filmFragment"
+            app:restoreState="true"
+            app:popUpTo="@id/filmFragment"
+            app:destination="@id/filmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seasonsFragment"
+        android:name="com.skillcinema.ui.seasons.SeasonsFragment"
+        android:label="fragment_seasons"
+        tools:layout="@layout/fragment_seasons" >
+        <action
+            android:id="@+id/action_seasonsFragment_to_filmFragment"
+            app:restoreState="true"
+            app:popUpTo="@id/filmFragment"
+            app:destination="@id/filmFragment" />
+        <argument
+            android:name="kinopoiskId"
+            app:argType="android.os.Bundle" />
+    </fragment>
+    <dialog
+        android:id="@+id/collectionDialogFragment"
+        android:name="com.skillcinema.ui.film.CollectionDialogFragment"
+        android:label="fragment_collection_dialog_list_dialog"
+        tools:layout="@layout/fragment_collection_dialog_list_dialog" >
+        <argument
+            android:name="filmInfo"
+            app:argType="android.os.Bundle" />
+    </dialog>
+    <fragment
+        android:id="@+id/fullCollectionFragment"
+        android:name="com.skillcinema.ui.fullCollection.FullCollectionFragment"
+        android:label="fragment_full_collection"
+        tools:layout="@layout/fragment_full_collection" >
+        <argument
+            android:name="collectionName"
+            app:argType="android.os.Bundle" />
+        <action
+            android:id="@+id/action_fullCollectionFragment_to_profileFragment"
+            app:restoreState="true"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_fullCollectionFragment_to_filmFragment"
+            app:popUpToSaveState="true"
+            app:destination="@id/filmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchSettings"
+        android:name="com.skillcinema.ui.searchSettings.SearchSettings"
+        android:label="fragment_search_settings"
+        tools:layout="@layout/fragment_search_settings" >
+        <action
+            android:id="@+id/action_searchSettings_to_searchFragment"
+            app:restoreState="true"
+            app:popUpTo="@id/searchFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_searchSettings_to_countrySelection"
+            app:popUpToSaveState="true"
+            app:destination="@id/countrySelection" />
+        <action
+            android:id="@+id/action_searchSettings_to_genreSelection"
+            app:popUpToSaveState="true"
+            app:destination="@id/genreSelection" />
+        <action
+            android:id="@+id/action_searchSettings_to_yearsSelection"
+            app:popUpToSaveState="true"
+            app:destination="@id/yearsSelection" />
+    </fragment>
+    <fragment
+        android:id="@+id/countrySelection"
+        android:name="com.skillcinema.ui.countrySelection.CountrySelection"
+        android:label="fragment_country_selection"
+        tools:layout="@layout/fragment_country_selection" >
+        <action
+            android:id="@+id/action_countrySelection_to_searchSettings"
+            app:popUpTo="@id/searchSettings"
+            app:restoreState="true"
+            app:destination="@id/searchSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/genreSelection"
+        android:name="com.skillcinema.ui.genreSelection.GenreSelection"
+        android:label="GenreSelection" >
+        <action
+            android:id="@+id/action_genreSelection_to_searchSettings"
+            app:restoreState="true"
+            app:popUpTo="@id/searchSettings"
+            app:destination="@id/searchSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/yearsSelection"
+        android:name="com.skillcinema.ui.yearsSelection.YearsSelection"
+        android:label="fragment_years_selection"
+        tools:layout="@layout/fragment_years_selection" >
+        <action
+            android:id="@+id/action_yearsSelection_to_searchSettings"
+            app:popUpTo="@id/searchSettings"
+            app:restoreState="true"
+            app:destination="@id/searchSettings" />
+    </fragment>
+</navigation>

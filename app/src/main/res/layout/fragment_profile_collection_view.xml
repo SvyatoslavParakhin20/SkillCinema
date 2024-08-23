@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/collectionFrame"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/square_frame"
+        android:paddingBottom="6dp"
+        android:paddingEnd="8dp"
+        tools:ignore="ContentDescription,RtlSymmetry" />
+    <ImageView
+        android:id="@+id/collectionIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/collectionFrame"
+        app:layout_constraintEnd_toEndOf="@id/collectionFrame"
+        app:layout_constraintStart_toStartOf="@id/collectionFrame"
+        app:layout_constraintTop_toTopOf="@id/collectionFrame"
+        app:layout_constraintVertical_bias="0.4"
+        tools:ignore="ContentDescription,ImageContrastCheck"
+        tools:src="@drawable/liked" />
+    <TextView
+        android:id="@+id/collectionNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/collectionFrame"
+        app:layout_constraintEnd_toEndOf="@id/collectionFrame"
+        app:layout_constraintTop_toBottomOf="@id/collectionIcon"
+        android:layout_marginTop="4dp"
+        android:maxLines="1"
+        android:maxLength="15"
+        android:ellipsize="end"
+        tools:text="@tools:sample/lorem/random"
+        />
+    <ImageView
+        android:id="@+id/collectionSizeImage"
+        android:layout_width="16dp"
+        android:layout_height="13dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/collectionNameTextView"
+        app:layout_constraintStart_toStartOf="@id/collectionFrame"
+        app:layout_constraintEnd_toEndOf="@id/collectionFrame"
+        android:background="@drawable/rating"
+        tools:ignore="ContentDescription" />
+    <TextView
+        android:id="@+id/collectionSizeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="22"
+        android:textSize="8sp"
+        android:textColor="@color/white"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintTop_toTopOf="@id/collectionSizeImage"
+        app:layout_constraintBottom_toBottomOf="@id/collectionSizeImage"
+        app:layout_constraintStart_toStartOf="@id/collectionSizeImage"
+        app:layout_constraintEnd_toEndOf="@id/collectionSizeImage"
+        tools:ignore="SmallSp" />
+    <ImageView
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/close"
+        app:layout_constraintEnd_toEndOf="@id/collectionFrame"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintVertical_bias="0.02"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/collectionFrame"
+        app:layout_constraintTop_toTopOf="@id/collectionFrame"
+        app:layout_constraintBottom_toBottomOf="@id/collectionFrame"
+        tools:ignore="ContentDescription" />
+</androidx.constraintlayout.widget.ConstraintLayout>

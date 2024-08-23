@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "407672986876",
+    "project_id": "skillcinemasvyatoslav",
+    "storage_bucket": "skillcinemasvyatoslav.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407672986876:android:fc24ed55a68028099acb79",
+        "android_client_info": {
+          "package_name": "com.skillcinema"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdvmHiyPdscNpTPzmqyISD6gkheWW1-ng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
