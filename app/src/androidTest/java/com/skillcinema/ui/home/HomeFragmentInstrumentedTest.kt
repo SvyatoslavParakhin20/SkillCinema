@@ -48,6 +48,3 @@ class HomeFragmentInstrumentedTest {
         onView(withId(R.id.nav_view)).check(matches(isEnabled()))
     }
 }
-//        activityTestRule.scenario.onActivity{
-//            it.supportFragmentManager.beginTransaction().replace(R.id.nav_view, HomeFragment()).commit()
-//        }
