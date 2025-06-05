@@ -45,13 +45,3 @@ class ProfileFragmentIntegrationTest {
         }
     }
 }
-//        onData(withId(R.id.concatRecyclerView))
-//            .atPosition(1)
-//            .onChildView(
-//                withId(R.id.collectionTextView)
-//            ).check(matches(ViewMatchers.withText("Коллекции")))
-
-//        onData(withId(R.id.collectionTextView)).check(matches(ViewMatchers.withText("Коллекции")))
-
-
-//        onView(withId(R.id.concatRecyclerView)).perform(RecyclerViewActions.scrollToLastPosition<RecyclerView.ViewHolder>())
