@@ -25,17 +25,3 @@
 [Скачать SkillCinema v1.0 (APK)](https://github.com/SvyatoslavParakhin20/SkillCinema/releases/download/v1.0/SkillCinema.v1.0.apk)
 
 Требуется Android 12.0 или выше.
-
-## Сборка из исходников (опционально)
-
-**Windows:**
-```bash
-gradlew.bat assembleDebug
-```
-
-**Linux/macOS:**
-```bash
-./gradlew assembleDebug
-```
-
-Готовый APK появится в `app/build/outputs/apk/debug/app-debug.apk`.
