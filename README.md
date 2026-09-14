@@ -1,22 +1,25 @@
-# 🎬 SkillCinema - Your Personal Movie Hub
+# SkillCinema
 
-## 🎥 Project Overview
+Приложение для Android: поиск фильмов, оценки, список просмотренного.
 
-SkillCinema is an Android application designed to revolutionize how users discover, rate, and organize their movie experiences. Built with a focus on a clean user experience, robust data management, and scalable architecture, SkillCinema provides a streamlined way to explore the world of cinema.
+## Что умеет
+- Поиск фильмов через TMDB API
+- Личные списки (посмотреть / просмотрено)
+- История просмотров
+- Оценки
 
-## ⚠️ Important Notice
+## Стек
+- Kotlin, XML
+- MVVM, Clean Architecture
+- Room (локальная база)
+- Coroutines, Flow
+- Hilt (DI)
+- Retrofit (сеть)
+- JUnit, Mockito, Espresso (тесты)
 
-**The Leaks app is a system component of SkillCinema!**
-- Leaks is not a standalone app – it is part of SkillCinema
-- Removing Leaks will also remove SkillCinema
-- Both apps work as an integrated system
+## Важно
+Приложение работает вместе с Leaks — это часть системы, а не отдельное приложение.
+Если удалить Leaks, SkillCinema тоже перестанет работать.
 
-## 🛠 Core Technologies:
-
-*   **Language:** Kotlin
-*   **UI:** XML
-*   **Architecture:** MVVM, Clean Architecture
-*   **Data Management:** Room (Local Persistence)
-*   **Asynchronous Operations:** Coroutines, Flow
-*   **Dependency Injection:** Hilt
-*   **Testing:** JUnit, Mockito, Espresso
+## Сборка из исходников (опционально)
+./gradlew assembleDebug
