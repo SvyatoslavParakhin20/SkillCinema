@@ -24,7 +24,7 @@
 ## Скачать
 [Скачать SkillCinema v1.0 (APK)](https://github.com/SvyatoslavParakhin20/SkillCinema/releases/download/v1.0/SkillCinema.v1.0.apk)
 
-Требуется Android 8.0 или выше.
+Требуется Android 12.0 или выше.
 
 ## Сборка из исходников (опционально)
 
